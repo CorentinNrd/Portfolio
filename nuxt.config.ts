@@ -23,6 +23,5 @@ export default defineNuxtConfig({
       title: 'Corentin Nordmann',
       // link: [{ rel: 'icon', type: 'image/png', href: '/UFriendsClient/images/PiniaLogo.png' }],
     },
-    description: 'Corentin Nordmann',
   },
 });
