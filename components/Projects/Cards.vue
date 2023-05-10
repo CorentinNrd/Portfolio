@@ -11,10 +11,14 @@
   });
 
   const { title, url } = toRefs(props);
+
+  const goTo = (title: string) => {
+    navigateTo(`/${title}`);
+  };
 </script>
 
 <template>
-  <el-card id="cards">
+  <el-card id="cards" @click="goTo(title)">
     <template #default>
       <div class="container-img">
         <h3>{{ title }}</h3>
