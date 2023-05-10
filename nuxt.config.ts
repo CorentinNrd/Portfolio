@@ -8,6 +8,13 @@ export default defineNuxtConfig({
   alias: {
     '@': '.',
   },
+  runtimeConfig: {
+    public: {
+      serviceEmail: process.env.SERVICE_EMAIL || 'default',
+      templateEmail: process.env.TEMPLATE_EMAIL || 'default',
+      keyEmail: process.env.KEY_EMAIL || 'default',
+    },
+  },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
@@ -16,5 +23,6 @@ export default defineNuxtConfig({
       title: 'Corentin Nordmann',
       // link: [{ rel: 'icon', type: 'image/png', href: '/UFriendsClient/images/PiniaLogo.png' }],
     },
+    description: 'Corentin Nordmann',
   },
 });
