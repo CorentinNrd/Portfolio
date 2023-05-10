@@ -1,23 +1,53 @@
 <script setup lang="ts">
-  //   const isMobile = ref(false);
+  interface FormContact {
+    email: string;
+    phone: string;
+    message: string;
+  }
 
-  //   const handleResize = () => {
-  //     if (window.innerWidth <= 768) {
-  //       isMobile.value = true;
-  //     } else {
-  //       isMobile.value = false;
-  //     }
-  //   };
+  const formContact: FormContact = reactive({
+    email: '',
+    phone: '',
+    message: '',
+  });
 
-  //   onMounted(() => {
-  //     handleResize();
-  //     window.addEventListener('resize', handleResize);
-  //   });
+  const sendForm = () => {
+    alert('Votre message a bien été envoyé');
+  };
 </script>
 
 <template>
   <div id="contact">
     <h1>Contact</h1>
+    <el-form label-position="top">
+      <el-row :gutter="16">
+        <el-col :xl="12" :lg="12" :md="12" :sm="24" :xs="24">
+          <el-form-item label="Email">
+            <el-input v-model="formContact.email" placeholder="coconrd@icloud.com" clearable />
+          </el-form-item>
+        </el-col>
+        <el-col :xl="12" :lg="12" :md="12" :sm="24" :xs="24">
+          <el-form-item label="Téléphone">
+            <el-input v-model="formContact.phone" placeholder="06060606060" clearable />
+          </el-form-item>
+        </el-col>
+      </el-row>
+      <el-form-item label="Message">
+        <el-input
+          v-model="formContact.message"
+          type="textarea"
+          placeholder="Votre message"
+          maxlength="1000"
+          show-word-limit
+          :rows="8"
+          resize="none"
+          clearable
+        />
+      </el-form-item>
+      <el-row justify="end">
+        <el-button type="primary" @click="sendForm">Envoyer</el-button>
+      </el-row>
+    </el-form>
   </div>
 </template>
 

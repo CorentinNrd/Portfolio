@@ -26,7 +26,7 @@
 
 <template>
   <div id="projects">
-    <h1>Projects</h1>
+    <h1>Projets</h1>
     <el-row :gutter="16">
       <el-col v-for="(v, k) in myobj" :key="k" :xl="12" :lg="12" :md="12" :sm="24" :xs="24" class="mt-2">
         <ProjectsCards :title="v.title" :url="v.url" />

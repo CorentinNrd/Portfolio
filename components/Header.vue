@@ -15,6 +15,14 @@
       nav?.classList.remove('nav-sticky');
     }
   };
+
+  const goToAnchor = (anchor: string) => {
+    const el = document.getElementById(anchor);
+    window.scroll({
+      top: el?.offsetTop! - 60,
+      behavior: 'smooth',
+    });
+  };
 </script>
 
 <template>
@@ -22,13 +30,16 @@
     <div class="nav">
       <ul>
         <li>
-          <NuxtLink to="#about" class="animated-link">About</NuxtLink>
+          <NuxtLink class="animated-link" @click="goToAnchor('about')">À savoir</NuxtLink>
         </li>
         <li>
-          <NuxtLink to="#projects" class="animated-link">Projects</NuxtLink>
+          <NuxtLink class="animated-link" @click="goToAnchor('skills')">Compétences</NuxtLink>
         </li>
         <li>
-          <NuxtLink to="#contact" class="animated-link">Contact</NuxtLink>
+          <NuxtLink class="animated-link" @click="goToAnchor('projects')">Projets</NuxtLink>
+        </li>
+        <li>
+          <NuxtLink class="animated-link" @click="goToAnchor('contact')">Contact</NuxtLink>
         </li>
       </ul>
     </div>
@@ -91,11 +102,14 @@
 
     ul {
       display: flex;
+      justify-content: center;
       list-style: none;
       gap: 15px;
 
       li {
-        margin-right: 1rem;
+        // margin-right: 0.5rem;
+        display: flex;
+        justify-content: center;
       }
     }
 

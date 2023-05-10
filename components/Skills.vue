@@ -17,7 +17,7 @@
 
 <template>
   <div id="skills">
-    <h1>Skills</h1>
+    <h1>Compétences</h1>
     <Swiper
       class="carousel"
       :modules="[SwiperAutoplay, SwiperPagination]"

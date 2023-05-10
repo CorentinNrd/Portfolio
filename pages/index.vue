@@ -4,6 +4,7 @@
       top: 0,
       behavior: 'smooth',
     });
+    history.pushState('', document.title, window.location.pathname);
   };
 
   onMounted(() => {
