@@ -1,0 +1,20 @@
+@import './fonts.scss';
+@import './variables.scss';
+
+html,
+body {
+  // height: 100%;
+  font-family: 'QuickSand', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #111827;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--font-size-title);
+}
