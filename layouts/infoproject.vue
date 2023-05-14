@@ -1,6 +1,6 @@
 <template>
   <div id="default">
-    <Header />
+    <HeaderInfoProject />
     <div class="content">
       <slot />
     </div>
