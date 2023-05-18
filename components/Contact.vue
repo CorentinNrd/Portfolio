@@ -58,12 +58,7 @@
       await ruleFormRef.value.validate((valid: any) => {
         if (valid && ruleFormRef.value) {
           emailjs
-            .sendForm(
-              runtimeConfig.public.serviceEmail,
-              runtimeConfig.public.templateEmail,
-              '#form',
-              runtimeConfig.public.keyEmail
-            )
+            .sendForm(runtimeConfig.public.serviceEmail, runtimeConfig.public.templateEmail, '#form', runtimeConfig.public.keyEmail)
             .then(() => {
               ElMessage({
                 message: 'Votre message a bien été envoyé !',
@@ -121,8 +116,7 @@
           show-word-limit
           :rows="8"
           resize="none"
-          clearable
-        />
+          clearable />
       </el-form-item>
       <el-row justify="end">
         <el-button type="primary" :disabled="emailSend ? true : false" @click="sendForm">Envoyer</el-button>

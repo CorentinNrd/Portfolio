@@ -7,14 +7,11 @@
 <template>
   <el-row id="presentation" class="width-100 height-100">
     <el-col class="presentation" :xl="12" :lg="12" :md="12" :sm="24" :xs="24">
-      <h1>Salut ! Je suis <strong>Corentin Nordmann</strong>.</h1>
+      <h1>Salut ! Je suis <strong>Corentin</strong>.</h1>
       <h1>Un développeur web.</h1>
       <p>Je suis spécialisé dans le développement d'application web front-end.</p>
       <el-row class="icons-social-media is-flex is-align-center">
-        <Icon
-          name="akar-icons:linkedin-box-fill"
-          @click="goToLink('https://www.linkedin.com/in/corentin-nordmann-429735152/')"
-        />
+        <Icon name="akar-icons:linkedin-box-fill" @click="goToLink('https://www.linkedin.com/in/corentin-nordmann-429735152/')" />
         <Icon name="akar-icons:twitter-fill" @click="goToLink('https://twitter.com/codanrd')" />
         <Icon name="akar-icons:github-fill" @click="goToLink('https://github.com/CorentinNrd')" />
       </el-row>
