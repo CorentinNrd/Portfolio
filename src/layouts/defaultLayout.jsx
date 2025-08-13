@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import Header from "../components/header";
+import Header from "../components/header.jsx";
 import useDeviceDetection from "../hooks/useDeviceDetection";
 import { useTranslation } from "react-i18next";
 import { FaHammer } from "react-icons/fa";

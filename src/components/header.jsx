@@ -1,8 +1,8 @@
 import "../styles/Header.css";
-import Modals from "./ui/modals.jsx";
-import InputCustom from "./form/input.jsx";
-import TextareaCustom from "./form/textarea.jsx";
-import ButtonCustom from "./ui/buttons.jsx";
+import Modals from "../components/ui/modals.jsx";
+import InputCustom from "../components/form/input.jsx";
+import TextareaCustom from "../components/form/textarea.jsx";
+import ButtonCustom from "../components/ui/buttons.jsx";
 import { useState, useEffect } from "react";
 import { FaGithub, FaLinkedin, FaMoon, FaSun } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
