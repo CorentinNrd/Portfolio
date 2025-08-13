@@ -1,4 +1,4 @@
-import "../../styles/FormTextarea.css";
+import "../../styles/Formtextarea.css";
 
 export default function Textarea({ type, placeholder, value, onChange }) {
   return (
