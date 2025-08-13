@@ -1,5 +1,5 @@
 import "../styles/Header.css";
-import Modals from "../components/ui/modals.jsx";
+import ModalComponent from "../components/ui/Modals.jsx";
 import InputCustom from "../components/form/input.jsx";
 import TextareaCustom from "../components/form/textarea.jsx";
 import ButtonCustom from "../components/ui/buttons.jsx";
@@ -82,7 +82,7 @@ export default function Header() {
           </ul>
         </nav>
       </header>
-      <Modals isOpen={isOpen} onClose={() => setIsOpen(false)}>
+      <ModalComponent isOpen={isOpen} onClose={() => setIsOpen(false)}>
         <form className="contactForm" onSubmit={(e) => e.preventDefault()}>
           <section className="formGroup">
             <div>
@@ -133,7 +133,7 @@ export default function Header() {
           <FaGithub />
           <FaLinkedin />
         </div>
-      </Modals>
+      </ModalComponent>
     </>
   );
 }

@@ -1,7 +1,7 @@
 import styles from "../styles/Home.module.css";
 import Cards from "../components/ui/cards.jsx";
 import Carousel from "../components/ui/carousel.jsx";
-import Modals from "../components/ui/modals.jsx";
+import ModalComponent from "../components/ui/Modals.jsx";
 import Timeline from "../components/ui/Timeline.jsx";
 import { useState } from "react";
 import { Trans } from "react-i18next";
@@ -26,7 +26,7 @@ export default function Home() {
           <Carousel />
         </Cards>
       </div>
-      <Modals
+      <ModalComponent
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
         styles={modalStyles}
@@ -39,7 +39,7 @@ export default function Home() {
         <br />
 
         <Timeline />
-      </Modals>
+      </ModalComponent>
     </>
   );
 }
