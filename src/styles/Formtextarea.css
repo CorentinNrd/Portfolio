@@ -1,0 +1,13 @@
+.textarea-custom {
+  width: 100%;
+  height: 100px; /* Default height, can be adjusted */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: none; /* Allows vertical resizing */
+}
+.textarea-custom:focus {
+  border-color: #007bff;
+  outline: none;
+}

@@ -1,0 +1,82 @@
+{
+  "mobileInConstruction": "Mobile en construction",
+  "firstName": "Prénom",
+  "lastName": "Nom",
+  "email": "email",
+  "content": "Message",
+  "send": "Envoyer",
+  "yourMessage": "Votre message ici ...",
+  "content-portrait": "Bonjour, moi c’est Corentin Nordmann, 26 ans. Développeur web depuis 2021, j’ai commencé avec HTML/CSS avant de plonger dans JavaScript, VueJS (mon terrain de jeu préféré) et React. <br /><br /> J’ai aussi exploré le back-end avec NodeJS, Express et MongoDB, réalisant plusieurs projets fullstack. <br /><br /> Passionné et toujours en quête de nouveaux défis, je suis aujourd’hui à la recherche d’une nouvelle aventure pro. Si mon profil vous parle, discutons-en ! <br /><br /> Prêt à explorer mon parcours ? Suivez le fil et découvrez mon histoire.",
+  "timelineData": [
+    {
+      "year": "1999",
+      "title": "Naissance de Corentin",
+      "description": "Ma première course gagnée finalement !"
+    },
+    {
+      "year": "2000 - 2010",
+      "title": "L'enfance",
+      "description": "Pas grand-chose à raconter, juste des jeux, des rires, des gamelles, beaucoup de déménagements avec un papa militaire."
+    },
+    {
+      "year": "2010 - 2012",
+      "title": "Canada",
+      "description": "J'ai vécu au Canada pendant 2 ans, j'aimerais dire que j'ai vécu 194 expériences mais bon, j'étais encore à l'école, mais j'ai pu découvrir le système d'éducation canadien et quelques grandes villes quand même, comme Ottawa, Boston et Montréal !"
+    },
+    {
+      "year": "2013 - 2015",
+      "title": "Retour en France",
+      "description": "Avec papa nous sommes rentrés en France, et j'ai continué mes études. J'ai fait mon collège, à Saint-Malo, puis j'ai arrêté mes études après le brevet des collèges."
+    },
+    {
+      "year": "2016 - 2018",
+      "title": "L'adolescence",
+      "description": "La période que tous les parents adorent il me semble. J'ai navigué entre les reprises d'études, les abandons, et le questionnement incessant sur mon avenir."
+    },
+    {
+      "year": "2018",
+      "title": "Paris ville de l'amour",
+      "description": "J'ai déménagé à Paris grâce à ma grand-mère et à mon père, ça a été la meilleure décision de ma vie, j'ai pu découvrir la ville, ses monuments, sa culture, et surtout, j'ai pu rencontrer des gens formidables."
+    },
+    {
+      "year": "2018 - 2019",
+      "title": "Militaire ?",
+      "description": "Je me suis engagé dans l'armée de terre, j'ai passé les tests, j'ai été accepté, mais bon il faut croire que la boue et courir ce n'est pas mon fort."
+    },
+    {
+      "year": "2019 - 2020",
+      "title": "Responsable d'une boutique",
+      "description": "Je me demande encore si c'était de la chance, mais j'ai été pris suite à ma candidature dans une boutique de vente de cigarettes électroniques, je suis resté vendeur environ 2 mois et suis très vite passé responsable d'une boutique, j'ai appris beaucoup de choses sur la vente, le management, et surtout, j'ai pu découvrir le monde du travail suite à cette première vraie expérience."
+    },
+    {
+      "year": "2020",
+      "title": "COVID",
+      "description": "On s'en souvient tous, et c'était déjà il y a longtemps oui, j'ai décidé d'arrêter mon CDI car je ne me voyais pas continuer dans ce milieu."
+    },
+    {
+      "year": "2021 - 2023",
+      "title": "Web@cadémie",
+      "description": "Suite à un mail de Pôle Emploi, j'ai décidé de m'inscrire à la Web@cadémie, une formation de 2 ans pour devenir développeur web, j'ai appris les fondamentaux du développement web, HTML, CSS, JavaScript, PHP, MySQL, et j'ai pu découvrir des frameworks comme VueJS et React. J'ai aussi pu réaliser plusieurs projets en équipe et en solo. (Je vous invite à ne pas regarder mon code, il est affreux, mais j'ai beaucoup appris depuis !)"
+    },
+    {
+      "year": "2022 - 2023",
+      "title": "Klineo",
+      "description": "On y est, ma première expérience en tant que développeur web, j'ai été embauché en alternance chez Klineo, une startup spécialisée dans les cancers, j'ai pu découvrir le monde du travail, les méthodes agiles, et surtout, j'ai pu travailler sur des projets concrets. J'ai amélioré mes compétences sur des outils comme Git, VueJS, Figma, et j'ai pu découvrir le monde du développement web en entreprise."
+    },
+    {
+      "year": "2023",
+      "title": "Bah oui, tout ça a une fin !",
+      "description": "Fin de mes 2 ans, et diplôme en poche, maintenant direction le CDI."
+    },
+    {
+      "year": "2023",
+      "title": "Paris Attitude",
+      "description": "Bon, je n'aurai eu que 2 semaines de vacances, mais j'ai réussi à avoir mon premier CDI en tant que développeur web, je suis très heureux de pouvoir continuer à travailler dans ce domaine qui me passionne."
+    },
+    {
+      "year": "2025",
+      "title": "Et maintenant ?",
+      "description": "Je viens de déménager dans le sud, proche d'Aix-en-Provence, et je suis toujours développeur web, j'ai pu découvrir de nouvelles technologies comme NodeJS, Express, MongoDB, et j'ai pu réaliser plusieurs projets. Je suis toujours passionné par le développement web, et j'aime relever de nouveaux défis. Je suis actuellement freelance chez Paris Attitude, mais je cherche un peu plus de stabilité pour mes projets de vie futurs, donc je suis à la recherche d'un CDI dans une entreprise qui me permettra de continuer à apprendre et à me développer."
+    }
+  ]
+}

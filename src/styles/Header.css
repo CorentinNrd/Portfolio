@@ -1,0 +1,93 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px 60px;
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.25) 25px 35px 70px 10px;
+}
+
+body.dark .header {
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 25px 50px -12px;
+}
+
+.navUl {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navUl li {
+  display: inline;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navUl li span {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.navUl li span:hover {
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+body.dark .navUl li span {
+  color: #fff;
+}
+
+body.dark .navUl li span:hover {
+  color: #66b3ff;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 30px;
+}
+
+.formGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.hr {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  margin: 20px 0;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.socialIcons svg {
+  text-decoration: none;
+  color: #333;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.socialIcons svg:hover {
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+body.dark .socialIcons svg {
+  color: #fff;
+}
+
+body.dark .socialIcons svg:hover {
+  color: #66b3ff;
+}
