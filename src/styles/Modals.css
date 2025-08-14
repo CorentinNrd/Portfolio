@@ -5,11 +5,15 @@
   max-height: 80vh;
   overflow-y: auto;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Support iOS */
+  overscroll-behavior: contain; /* Empêche le scroll du body */
 }
 
 .react-responsive-modal-container {
   overflow-x: auto !important;
   overflow-y: auto !important;
+  /* Corrections pour mobile */
+  -webkit-overflow-scrolling: touch !important;
 }
 
 body.dark .customModal {
@@ -17,14 +21,21 @@ body.dark .customModal {
   box-shadow: rgba(255, 255, 255, 0.25) 0px 25px 50px -12px;
 }
 
-/* @keyframes customEnterModalAnimation {
-  0% {
-    transform: scale(0.2);
+/* Fix spécifique pour mobile */
+@media (max-width: 768px) {
+  .customModal {
+    max-height: 90vh; /* Plus de hauteur sur mobile */
+    overflow-y: scroll; /* Force le scroll */
+    -webkit-overflow-scrolling: touch;
   }
-  100% {
-    transform: scale(1);
+
+  /* Empêcher le scroll du body quand la modal est ouverte */
+  body.modal-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
   }
-} */
+}
 
 @keyframes customEnterModalAnimation {
   0% {
