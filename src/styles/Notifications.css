@@ -1,0 +1,52 @@
+.notification {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  opacity: 0;
+  transform: translateX(100%); /* Commence hors écran à droite */
+  transition: none; /* Désactiver la transition pour utiliser l'animation */
+  cursor: pointer;
+}
+
+.notification.show {
+  opacity: 1;
+  animation: bounceInFromRight 0.5s ease-out forwards;
+}
+
+@keyframes bounceInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(-15px); /* Dépasse vers la gauche */
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(5px); /* Rebond vers la droite */
+  }
+  100% {
+    transform: translateX(0); /* Position finale */
+    opacity: 1;
+  }
+}
+
+/* Animation de sortie optionnelle */
+.notification.hide {
+  animation: slideOutToRight 0.3s ease-in forwards;
+}
+
+@keyframes slideOutToRight {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}

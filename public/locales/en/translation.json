@@ -6,6 +6,10 @@
     "content": "Message",
     "send": "Send",
     "yourMessage": "Your message here ...",
+    "emailSent": "Email sent successfully!",
+    "emailError": "Error sending email.",
+    "darkModeEnabled": "Dark mode enabled",
+    "lightModeEnabled": "Light mode enabled",
     "content-portrait": "Hello, I'm Corentin Nordmann, 26 years old. Web developer since 2021, I started with HTML/CSS before diving into JavaScript, VueJS (my favorite playground) and React. <br /><br /> I also explored back-end with NodeJS, Express and MongoDB, creating several fullstack projects. <br /><br /> Passionate and always looking for new challenges, I'm currently looking for a new professional adventure. If my profile speaks to you, let's discuss! <br /><br /> Ready to explore my journey? Follow the thread and discover my story.",
     "timelineData": [
         {

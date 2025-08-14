@@ -3,20 +3,22 @@ import ModalComponent from "../components/ui/Modals.jsx";
 import InputCustom from "../components/form/input.jsx";
 import TextareaCustom from "../components/form/textarea.jsx";
 import ButtonCustom from "../components/ui/buttons.jsx";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaGithub, FaLinkedin, FaMoon, FaSun } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import emailjs from "@emailjs/browser";
+import NotificationsComponent from "../components/ui/NotificationsComponent.jsx";
 
 export default function Header() {
   const { t, i18n } = useTranslation();
+  const form = useRef();
 
   const [isOpen, setIsOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
+  const [notification, setNotification] = useState({
+    display: false,
     message: "",
+    type: "success",
   });
 
   const changeLanguageHandler = (lang) => {
@@ -44,15 +46,41 @@ export default function Header() {
   const handleDarkModeToggle = () => {
     document.body.classList.toggle("dark");
     setDarkMode(!darkMode);
+    setNotification({
+      display: true,
+      message: !darkMode
+        ? t("darkModeEnabled")
+        : t("lightModeEnabled"),
+      type: "success",
+    });
     const isDark = document.body.classList.contains("dark");
     localStorage.setItem("darkMode", isDark);
   };
 
-  const handleInputChange = (field, value) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      [field]: value.target.value,
-    }));
+  const sendEmail = (e) => {
+    e.preventDefault();
+    
+    emailjs
+      .sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, form.current, {
+        publicKey: import.meta.env.VITE_PUBLIC_KEY,
+      })
+      .then(
+        () => {
+          setNotification({
+            display: true,
+            message: t("emailSent"),
+            type: "success",
+          });
+          setIsOpen(false);
+        },
+        () => {
+          setNotification({
+            display: true,
+            message: t("emailError"),
+            type: "error",
+          });
+        }
+      );
   };
 
   return (
@@ -83,48 +111,44 @@ export default function Header() {
         </nav>
       </header>
       <ModalComponent isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <form className="contactForm" onSubmit={(e) => e.preventDefault()}>
+        <form ref={form} className="contactForm" onSubmit={sendEmail}>
           <section className="formGroup">
             <div>
               <label htmlFor="firstName">{t("firstName")}</label>
-              <InputCustom 
-                placeholder="Corentin" 
-                ID="firstName" 
-                onChange={(value) => handleInputChange('firstName', value)}
+              <InputCustom
+                type="text"
+                name="firstName"
+                placeholder="Corentin"
+                ID="firstName"
               />
             </div>
             <div>
               <label htmlFor="lastName">{t("lastName")}</label>
-              <InputCustom 
-                placeholder="Nordmann" 
+              <InputCustom
+                type="text"
+                name="lastName"
+                placeholder="Nordmann"
                 ID="lastName"
-                onChange={(value) => handleInputChange('lastName', value)}
               />
             </div>
           </section>
 
           <div>
             <label htmlFor="email">{t("email")}</label>
-            <InputCustom 
-              placeholder="coconrd@icloud.com" 
+            <InputCustom
+              type="email"
+              name="email"
+              placeholder="coconrd@icloud.com"
               ID="email"
-              onChange={(value) => handleInputChange('email', value)}
             />
           </div>
 
           <div>
             <label htmlFor="message">{t("content")}</label>
-            <TextareaCustom 
-              placeholder={t("yourMessage")}
-              onChange={(value) => handleInputChange('message', value)}
-            />
+            <TextareaCustom name="message" placeholder={t("yourMessage")} />
           </div>
 
-          <ButtonCustom
-            onClick={() => console.log("Message sent", formData)}
-            label={t("send")}
-            bgColor="#007bff"
-          />
+          <ButtonCustom type="submit" label={t("send")} bgColor="#007bff" />
         </form>
 
         <hr className="hr" />
@@ -134,6 +158,14 @@ export default function Header() {
           <FaLinkedin />
         </div>
       </ModalComponent>
+      <NotificationsComponent
+        isOpen={notification.display}
+        type={notification.type}
+        delay={5000}
+        onClose={() => setNotification((prev) => ({ ...prev, display: false }))}
+      >
+        <p>{notification.message}</p>
+      </NotificationsComponent>
     </>
   );
 }
