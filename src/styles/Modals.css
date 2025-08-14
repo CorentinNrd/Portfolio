@@ -6,6 +6,10 @@
   overflow-y: auto;
 }
 
+.react-responsive-modal-container {
+  overflow: auto !important;
+}
+
 body.dark .customModal {
   background-color: #2a2a2a;
   box-shadow: rgba(255, 255, 255, 0.25) 0px 25px 50px -12px;
