@@ -11,3 +11,10 @@
   border-color: #007bff;
   outline: none;
 }
+.textarea-custom.error {
+  border-color: red;
+}
+.textarea-custom.error::placeholder {
+  color: red;
+  opacity: 0.7;
+}

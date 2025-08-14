@@ -10,3 +10,11 @@
   border-color: #007bff;
   outline: none;
 }
+
+.input-custom.error {
+  border-color: red;
+}
+.input-custom.error::placeholder {
+  color: red;
+  opacity: 0.7;
+}

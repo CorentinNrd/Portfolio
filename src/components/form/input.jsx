@@ -1,6 +1,14 @@
 import "../../styles/FormInput.css";
 
-export default function Input({ type, placeholder, value, onChange, ID, name }) {
+export default function Input({
+  type,
+  placeholder,
+  value,
+  onChange,
+  ID,
+  name,
+  error = false,
+}) {
   return (
     <input
       id={ID}
@@ -9,7 +17,7 @@ export default function Input({ type, placeholder, value, onChange, ID, name }) 
       value={value}
       onChange={onChange}
       name={name}
-      className="input-custom"
+      className={`input-custom ${error ? " error" : ""}`}
     />
   );
 }

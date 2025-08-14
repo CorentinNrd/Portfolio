@@ -3,11 +3,12 @@ import ModalComponent from "../components/ui/Modals.jsx";
 import InputCustom from "../components/form/input.jsx";
 import TextareaCustom from "../components/form/textarea.jsx";
 import ButtonCustom from "../components/ui/buttons.jsx";
+import NotificationsComponent from "../components/ui/NotificationsComponent.jsx";
 import { useState, useEffect, useRef } from "react";
 import { FaGithub, FaLinkedin, FaMoon, FaSun } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
-import NotificationsComponent from "../components/ui/NotificationsComponent.jsx";
+import { checkEmail } from "../utils/index.js";
 
 export default function Header() {
   const { t, i18n } = useTranslation();
@@ -20,6 +21,44 @@ export default function Header() {
     message: "",
     type: "success",
   });
+  const [errorDisplay, setErrorDisplay] = useState(false);
+
+  // State pour les champs du formulaire
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    message: "",
+  });
+
+  // Fonction pour vérifier si le formulaire est valide
+  const isFormValid = () => {
+    return (
+      formData.firstName.trim() !== "" &&
+      formData.lastName.trim() !== "" &&
+      formData.email.trim() !== "" &&
+      formData.message.trim() !== ""
+    );
+  };
+
+  // Fonction pour mettre à jour les champs
+  const handleInputChange = (field, value) => {
+    setFormData((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+  };
+
+  useEffect(() => {
+    if (!isOpen) {
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        message: "",
+      });
+    }
+  }, [isOpen]);
 
   const changeLanguageHandler = (lang) => {
     i18n.changeLanguage(lang);
@@ -64,6 +103,16 @@ export default function Header() {
 
   const sendEmail = (e) => {
     e.preventDefault();
+
+    if (!isFormValid()) {
+      setErrorDisplay(true);
+      setNotification({
+        display: true,
+        message: t("formError"),
+        type: "error",
+      });
+      return;
+    }
 
     emailjs
       .sendForm(
@@ -130,7 +179,15 @@ export default function Header() {
                 name="firstName"
                 placeholder="Corentin"
                 ID="firstName"
-              />
+                value={formData.firstName}
+                error={!formData.firstName.trim() && errorDisplay}
+                onChange={(e) => handleInputChange("firstName", e.target.value)}
+              />{" "}
+              <p className="error-message">
+                {!formData.firstName.trim() &&
+                  errorDisplay &&
+                  t("firstNameRequired")}
+              </p>
             </div>
             <div>
               <label htmlFor="lastName">{t("lastName")}</label>
@@ -139,26 +196,61 @@ export default function Header() {
                 name="lastName"
                 placeholder="Nordmann"
                 ID="lastName"
+                value={formData.lastName}
+                error={!formData.lastName.trim() && errorDisplay}
+                onChange={(e) => handleInputChange("lastName", e.target.value)}
               />
+              <p className="error-message">
+                {!formData.lastName.trim() &&
+                  errorDisplay &&
+                  t("lastNameRequired")}
+              </p>
             </div>
           </section>
 
           <div>
             <label htmlFor="email">{t("email")}</label>
             <InputCustom
-              type="email"
+              type="text"
               name="email"
               placeholder="coconrd@icloud.com"
               ID="email"
+              value={formData.email}
+              error={
+                (!formData.email.trim() && errorDisplay) ||
+                (!checkEmail(formData.email) && errorDisplay)
+              }
+              onChange={(e) => handleInputChange("email", e.target.value)}
             />
+            <p className="error-message">
+              {!formData.email.trim() && errorDisplay
+                ? t("emailRequired")
+                : !checkEmail(formData.email) && errorDisplay
+                ? t("emailInvalid")
+                : ""}
+            </p>
           </div>
 
           <div>
             <label htmlFor="message">{t("content")}</label>
-            <TextareaCustom name="message" placeholder={t("yourMessage")} />
+            <TextareaCustom
+              name="message"
+              placeholder={t("yourMessage")}
+              value={formData.message}
+              error={!formData.message.trim() && errorDisplay}
+              onChange={(e) => handleInputChange("message", e.target.value)}
+            />
+            <p className="error-message">
+              {!formData.message.trim() && errorDisplay && t("contentRequired")}
+            </p>
           </div>
 
-          <ButtonCustom type="submit" label={t("send")} bgColor="#007bff" />
+          <ButtonCustom
+            type="submit"
+            label={t("send")}
+            bgColor="#007bff"
+            // disabled={!isFormValid()}
+          />
         </form>
 
         <hr className="hr" />
@@ -183,7 +275,7 @@ export default function Header() {
       <NotificationsComponent
         isOpen={notification.display}
         type={notification.type}
-        delay={5000}
+        delay={2500}
         onClose={() => setNotification((prev) => ({ ...prev, display: false }))}
       >
         <p>{notification.message}</p>

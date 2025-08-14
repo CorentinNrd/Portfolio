@@ -1,6 +1,6 @@
 import "../../styles/Formtextarea.css";
 
-export default function Textarea({ type, placeholder, value, onChange, name }) {
+export default function Textarea({ type, placeholder, value, onChange, name, error = false }) {
   return (
     <textarea
       type={type}
@@ -8,7 +8,7 @@ export default function Textarea({ type, placeholder, value, onChange, name }) {
       value={value}
       onChange={onChange}
       name={name}
-      className="textarea-custom"
+      className={`textarea-custom ${error ? " error" : ""}`}
     />
   );
 }

@@ -9,3 +9,8 @@ export const slugify = (text) => {
     .replace(/[^\w ]+/g, '')
     .replace(/ +/g, '-')
 }
+
+export const checkEmail = (email) => {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return re.test(String(email).toLowerCase())
+}

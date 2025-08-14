@@ -89,5 +89,11 @@
   "legalNotice": "Mentions légales",
   "host": "Hébergeur",
   "personalSite": "Site personnel de Corentin Nordmann",
-  "contactEmail": "Contact: coconrd@icloud.com"
+  "contactEmail": "Contact: coconrd@icloud.com",
+  "formError": "Veuillez remplir tous les champs",
+  "emailInvalid": "L'email saisi n'est pas valide.",
+  "emailRequired": "L'email est requis.",
+  "firstNameRequired": "Le prénom est requis.",
+  "lastNameRequired": "Le nom est requis.",
+  "contentRequired": "Le contenu est requis."
 }

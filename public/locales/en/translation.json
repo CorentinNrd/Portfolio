@@ -90,5 +90,11 @@
   "legalNotice": "Legal notice",
   "host": "Host",
   "personalSite": "Personal website of Corentin Nordmann",
-  "contactEmail": "Contact: coconrd@icloud.com"
+  "contactEmail": "Contact: coconrd@icloud.com",
+  "formError": "Please fill in all fields",
+  "emailInvalid": "The entered email is not valid.",
+  "emailRequired": "Email is required.",
+  "firstNameRequired": "First name is required.",
+  "lastNameRequired": "Last name is required.",
+  "contentRequired": "Message is required."
 }

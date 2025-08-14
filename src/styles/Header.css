@@ -91,3 +91,9 @@ body.dark .socialIcons svg {
 body.dark .socialIcons svg:hover {
   color: #66b3ff;
 }
+
+.error-message {
+  color: red;
+  font-size: 0.7em;
+  margin-top: 2px;
+}
