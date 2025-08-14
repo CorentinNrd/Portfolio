@@ -6,8 +6,6 @@
   overflow-y: auto;
   overflow-x: hidden; /* Empêche le scroll horizontal */
   -webkit-overflow-scrolling: touch;
-  overscroll-behavior-y: none; /* Empêche le bounce scroll */
-  scroll-behavior: smooth; /* Scroll fluide */
 }
 
 .react-responsive-modal-container {
@@ -24,12 +22,11 @@ body.dark .customModal {
 /* Fix spécifique pour mobile */
 @media (max-width: 768px) {
   .customModal {
-    max-height: 85vh; /* Légèrement réduit */
+    max-height: 90vh; /* Légèrement réduit */
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    overscroll-behavior: none; /* Très important pour mobile */
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
   }
 
   /* Empêcher le scroll du body quand la modal est ouverte */

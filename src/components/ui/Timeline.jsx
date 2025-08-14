@@ -12,7 +12,15 @@ export default function Timeline() {
     const timeline = timelineRef.current;
     if (!timeline) return;
 
+    // Fix pour le scroll mobile - forcer le reset
+    const modalContainer = timeline.closest(".customModal");
+    if (modalContainer) {
+      modalContainer.scrollTop = 0;
+    }
+
     const items = timeline.querySelectorAll(".timeline-item");
+
+    const observers = []; // Stocker les observers pour cleanup
 
     // Observer pour chaque item
     items.forEach((item) => {
@@ -46,40 +54,39 @@ export default function Timeline() {
           });
         },
         {
+          root: modalContainer,
           threshold: 0.3,
           rootMargin: "0px 0px -100px 0px",
         }
       );
 
       observer.observe(item);
+      observers.push(observer);
     });
 
-    // Cleanup
+    // Cleanup proper
     return () => {
-      items.forEach((item) => {
-        const observer = new IntersectionObserver(() => {});
-        observer.disconnect();
-        observer.observe(item); // Déconnecte l'observer pour éviter les fuites de mémoire
-      });
+      observers.forEach(observer => observer.disconnect());
     };
   }, [timelineData]);
 
   return (
     <div className="timeline-container" ref={timelineRef}>
       <div className="timeline-line"></div>
-      {timelineData && timelineData.map((item, index) => (
-        <div
-          key={index}
-          className={`timeline-item ${index % 2 === 0 ? "left" : "right"}`}
-        >
-          <div className="timeline-content">
-            <div className="timeline-year">{item.year}</div>
-            <h3 className="timeline-title">{item.title}</h3>
-            <p className="timeline-description">{item.description}</p>
+      {timelineData &&
+        timelineData.map((item, index) => (
+          <div
+            key={index}
+            className={`timeline-item ${index % 2 === 0 ? "left" : "right"}`}
+          >
+            <div className="timeline-content">
+              <div className="timeline-year">{item.year}</div>
+              <h3 className="timeline-title">{item.title}</h3>
+              <p className="timeline-description">{item.description}</p>
+            </div>
+            <div className="timeline-dot"></div>
           </div>
-          <div className="timeline-dot"></div>
-        </div>
-      ))}
+        ))}
     </div>
   );
 }
