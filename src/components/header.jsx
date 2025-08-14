@@ -9,6 +9,7 @@ import { FaGithub, FaLinkedin, FaMoon, FaSun } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
 import { checkEmail } from "../utils/index.js";
+import cv from "../assets/cv.pdf";
 
 export default function Header() {
   const { t, i18n } = useTranslation();
@@ -59,6 +60,20 @@ export default function Header() {
       });
     }
   }, [isOpen]);
+
+  const dowloadCV = () => {
+    const link = document.createElement("a");
+    link.href = cv;
+    link.download = "Corentin_Nordmann_CV.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setNotification({
+      display: true,
+      message: t("cvDownloaded"),
+      type: "success",
+    });
+  };
 
   const changeLanguageHandler = (lang) => {
     i18n.changeLanguage(lang);
@@ -149,6 +164,9 @@ export default function Header() {
           <ul className="navUl">
             <li>
               <span onClick={() => setIsOpen(true)}>Contact</span>
+            </li>
+            <li>
+              <span onClick={() => dowloadCV()}>Curriculum Vitae</span>
             </li>
             <li>
               {i18n.language === "fr" ? (

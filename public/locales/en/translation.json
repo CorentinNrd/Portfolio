@@ -96,5 +96,6 @@
   "emailRequired": "Email is required.",
   "firstNameRequired": "First name is required.",
   "lastNameRequired": "Last name is required.",
-  "contentRequired": "Message is required."
+  "contentRequired": "Message is required.",
+  "cvDownloaded": "CV downloaded successfully!"
 }

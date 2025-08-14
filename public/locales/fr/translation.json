@@ -95,5 +95,6 @@
   "emailRequired": "L'email est requis.",
   "firstNameRequired": "Le prénom est requis.",
   "lastNameRequired": "Le nom est requis.",
-  "contentRequired": "Le contenu est requis."
+  "contentRequired": "Le contenu est requis.",
+  "cvDownloaded": "CV téléchargé avec succès !"
 }
