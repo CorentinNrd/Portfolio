@@ -1,8 +1,5 @@
 import useEmblaCarousel from "embla-carousel-react";
 import "../../styles/Carousel.css";
-import Klineo from "../../assets/klineo.png";
-import Parisattitude from "../../assets/parisattitude.png";
-import Tipi from "../../assets/tipi.png";
 import { DotButton, CarouselDotButton } from "./CarouselDotButton";
 import {
   PrevButton,
@@ -10,7 +7,7 @@ import {
   CarouselArrowButton,
 } from "./CarouselArrowButton";
 
-export default function Carousel() {
+export default function Carousel({slides}) {
   const options = {
     loop: true,
   };
@@ -26,16 +23,6 @@ export default function Carousel() {
     onPrevButtonClick,
     onNextButtonClick,
   } = CarouselArrowButton(emblaApi);
-
-  const slides = [
-    {
-      src: Parisattitude,
-      alt: "PARIS ATTITUDE",
-      url: "https://www.parisattitude.com/",
-    },
-    { src: Tipi, alt: "TIPI (outil interne)" },
-    { src: Klineo, alt: "KLINEO", url: "https://www.klineo.fr/" },
-  ];
 
   return (
     <section className="embla">

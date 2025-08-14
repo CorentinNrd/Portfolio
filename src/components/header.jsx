@@ -5,13 +5,15 @@ import TextareaCustom from "../components/form/textarea.jsx";
 import ButtonCustom from "../components/ui/buttons.jsx";
 import NotificationsComponent from "../components/ui/NotificationsComponent.jsx";
 import { useState, useEffect, useRef } from "react";
-import { FaGithub, FaLinkedin, FaMoon, FaSun } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaMoon, FaSun, FaBars } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
 import { checkEmail } from "../utils/index.js";
 import cv from "../assets/cv.pdf";
+import useDeviceDetection from "../hooks/useDeviceDetection";
 
 export default function Header() {
+  const device = useDeviceDetection();
   const { t, i18n } = useTranslation();
   const form = useRef();
 
@@ -162,12 +164,20 @@ export default function Header() {
       <header className="header">
         <nav>
           <ul className="navUl">
-            <li>
-              <span onClick={() => setIsOpen(true)}>Contact</span>
-            </li>
-            <li>
-              <span onClick={() => dowloadCV()}>Curriculum Vitae</span>
-            </li>
+            {device === "Mobile" ? (
+              <li>
+                <FaBars />
+              </li>
+            ) : (
+              <>
+                <li>
+                  <span onClick={() => setIsOpen(true)}>Contact</span>
+                </li>
+                <li>
+                  <span onClick={() => dowloadCV()}>Curriculum Vitae</span>
+                </li>
+              </>
+            )}
             <li>
               {i18n.language === "fr" ? (
                 <span

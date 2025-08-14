@@ -5,13 +5,28 @@ import ModalComponent from "../components/ui/Modals.jsx";
 import Timeline from "../components/ui/Timeline.jsx";
 import { useState } from "react";
 import { Trans } from "react-i18next";
+import Klineo from "../assets/klineo.png";
+import Parisattitude from "../assets/parisattitude.png";
+import Tipi from "../assets/tipi.png";
+import useDeviceDetection from "../hooks/useDeviceDetection";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
+  const device = useDeviceDetection();
 
   const modalStyles = {
     width: "fit-content",
   };
+
+  const slides = [
+    {
+      src: Parisattitude,
+      alt: "PARIS ATTITUDE",
+      url: "https://www.parisattitude.com/",
+    },
+    { src: Tipi, alt: "TIPI (outil interne)" },
+    { src: Klineo, alt: "KLINEO", url: "https://www.klineo.fr/" },
+  ];
 
   return (
     <>
@@ -22,9 +37,31 @@ export default function Home() {
             <h2 className={styles.h2}>Portrait !</h2>
           </Cards>
         </div>
-        <Cards className="projects">
-          <Carousel />
-        </Cards>
+        {device !== "Mobile" ? (
+          <Cards className="projects">
+            <Carousel slides={slides} />
+          </Cards>
+        ) : (
+          slides.map((slide, index) => (
+            <Cards key={index} className="projects">
+              <a
+                href={slide.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.project_link}
+              >
+                <img
+                  className={styles.project_image}
+                  src={slide.src}
+                  alt={slide.alt}
+                />
+              </a>
+              <div className={styles.project_text}>
+                <p>{slide.alt}</p>
+              </div>
+            </Cards>
+          ))
+        )}
       </div>
       <ModalComponent
         isOpen={isOpen}
