@@ -3,6 +3,9 @@
   padding: 2rem 0;
   max-width: 900px;
   margin: 0 auto;
+  /* Assurer un scroll fluide */
+  scroll-behavior: smooth;
+  overflow: visible; /* Important */
 }
 
 .timeline-line {
@@ -116,6 +119,10 @@ body.dark .timeline-dot {
 
 /* Mobile responsive */
 @media (max-width: 768px) {
+  .timeline-container {
+    padding: 1rem 0; /* Réduit le padding sur mobile */
+  }
+  
   .timeline-line {
     left: 2rem;
   }

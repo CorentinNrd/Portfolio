@@ -4,15 +4,15 @@
   max-width: unset;
   max-height: 80vh;
   overflow-y: auto;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch; /* Support iOS */
-  overscroll-behavior: contain; /* Empêche le scroll du body */
+  overflow-x: hidden; /* Empêche le scroll horizontal */
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: none; /* Empêche le bounce scroll */
+  scroll-behavior: smooth; /* Scroll fluide */
 }
 
 .react-responsive-modal-container {
-  overflow-x: auto !important;
+  overflow-x: hidden !important;
   overflow-y: auto !important;
-  /* Corrections pour mobile */
   -webkit-overflow-scrolling: touch !important;
 }
 
@@ -24,9 +24,12 @@ body.dark .customModal {
 /* Fix spécifique pour mobile */
 @media (max-width: 768px) {
   .customModal {
-    max-height: 90vh; /* Plus de hauteur sur mobile */
-    overflow-y: scroll; /* Force le scroll */
+    max-height: 85vh; /* Légèrement réduit */
+    overflow-y: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
+    overscroll-behavior: none; /* Très important pour mobile */
+    scroll-behavior: smooth;
   }
 
   /* Empêcher le scroll du body quand la modal est ouverte */
@@ -34,6 +37,7 @@ body.dark .customModal {
     overflow: hidden;
     position: fixed;
     width: 100%;
+    height: 100%;
   }
 }
 
