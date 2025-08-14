@@ -45,8 +45,8 @@ export default function Header() {
       }
     } else {
       // Sinon, utiliser le thème dark par défaut
-      document.body.classList.add("dark");
-      localStorage.setItem("darkMode", "true");
+      document.body.classList.add("light");
+      localStorage.setItem("darkMode", "false");
     }
   }, []);
 
