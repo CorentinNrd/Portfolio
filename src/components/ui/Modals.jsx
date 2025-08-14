@@ -12,6 +12,7 @@ export default function Modals({ children, isOpen, onClose, styles }) {
         classNames={{
           modal: "customModal",
           modalAnimationIn: "customEnterModalAnimation",
+          modalAnimationOut: "customExitModalAnimation",
         }}
         styles={{
           modal: styles,

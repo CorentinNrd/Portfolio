@@ -11,12 +11,42 @@ body.dark .customModal {
   box-shadow: rgba(255, 255, 255, 0.25) 0px 25px 50px -12px;
 }
 
-@keyframes customEnterModalAnimation {
+/* @keyframes customEnterModalAnimation {
   0% {
     transform: scale(0.2);
   }
   100% {
     transform: scale(1);
+  }
+} */
+
+@keyframes customEnterModalAnimation {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(20px); /* Dépasse légèrement */
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0); /* Position finale */
+    opacity: 1;
+  }
+}
+
+@keyframes customExitModalAnimation {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(20px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
   }
 }
 
