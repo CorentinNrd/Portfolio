@@ -22,30 +22,30 @@ body.dark .customModal {
 
 @keyframes customEnterModalAnimation {
   0% {
-    transform: translateY(-100vh);
+    transform: translateX(-100vh);
     opacity: 0;
   }
   60% {
-    transform: translateY(20px); /* Dépasse légèrement */
+    transform: translateX(20px); /* Dépasse légèrement */
     opacity: 1;
   }
   100% {
-    transform: translateY(0); /* Position finale */
+    transform: translateX(0); /* Position finale */
     opacity: 1;
   }
 }
 
 @keyframes customExitModalAnimation {
   0% {
-    transform: translateY(0);
+    transform: translateX(0);
     opacity: 1;
   }
   50% {
-    transform: translateY(20px);
+    transform: translateX(20px);
     opacity: 1;
   }
   100% {
-    transform: translateY(-100vh);
+    transform: translateX(100vh);
     opacity: 0;
   }
 }
