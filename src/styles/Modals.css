@@ -3,15 +3,10 @@
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
   max-width: unset;
   max-height: 80vh;
-  overflow-y: auto;
-  overflow-x: hidden; /* Empêche le scroll horizontal */
+  overflow: auto;
+  /* Solution simple pour mobile */
   -webkit-overflow-scrolling: touch;
-}
-
-.react-responsive-modal-container {
-  overflow-x: hidden !important;
-  overflow-y: auto !important;
-  -webkit-overflow-scrolling: touch !important;
+  touch-action: pan-y; /* Permet seulement le scroll vertical */
 }
 
 body.dark .customModal {
@@ -22,19 +17,14 @@ body.dark .customModal {
 /* Fix spécifique pour mobile */
 @media (max-width: 768px) {
   .customModal {
-    max-height: 90vh; /* Légèrement réduit */
-    overflow-y: auto;
-    overflow-x: hidden;
+    max-height: 85vh;
+    touch-action: pan-y;
     -webkit-overflow-scrolling: touch;
-    scroll-behavior: auto;
   }
 
-  /* Empêcher le scroll du body quand la modal est ouverte */
+  /* Enlever le fixed du body */
   body.modal-open {
     overflow: hidden;
-    position: fixed;
-    width: 100%;
-    height: 100%;
   }
 }
 

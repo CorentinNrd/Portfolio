@@ -18,7 +18,6 @@ export default function Modals({ children, isOpen, onClose, styles }) {
           modal: styles,
         }}
         animationDuration={500}
-        // Props spécifiques pour mobile
         showCloseIcon={true}
         closeOnOverlayClick={true}
         closeOnEsc={true}
