@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/header.jsx";
+import Footer from "../components/footer.jsx";
 import useDeviceDetection from "../hooks/useDeviceDetection";
 import { useTranslation } from "react-i18next";
 import { FaHammer } from "react-icons/fa";
@@ -26,6 +27,7 @@ export default function DefaultLayout() {
         <>
           <Header />
           <Outlet />
+          <Footer />
         </>
       )}
     </>

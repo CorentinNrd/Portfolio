@@ -83,5 +83,12 @@
       "title": "And now?",
       "description": "I just moved to the south, near Aix-en-Provence, and I'm still a web developer, I was able to discover new technologies like NodeJS, Express, MongoDB, and I was able to carry out several projects. I'm still passionate about web development, and I like to take on new challenges. I'm currently freelance at Paris Attitude, but I'm looking for a little more stability for my future life projects, so I'm looking for a permanent contract in a company that will allow me to continue learning and developing."
     }
-  ]
+  ],
+
+  "allRightsReserved": "All rights reserved",
+  "siteCreatedBy": "Site created by",
+  "legalNotice": "Legal notice",
+  "host": "Host",
+  "personalSite": "Personal website of Corentin Nordmann",
+  "contactEmail": "Contact: coconrd@icloud.com"
 }

@@ -83,5 +83,11 @@
       "title": "Et maintenant ?",
       "description": "Je viens de déménager dans le sud, proche d'Aix-en-Provence, et je suis toujours développeur web, j'ai pu découvrir de nouvelles technologies comme NodeJS, Express, MongoDB, et j'ai pu réaliser plusieurs projets. Je suis toujours passionné par le développement web, et j'aime relever de nouveaux défis. Je suis actuellement freelance chez Paris Attitude, mais je cherche un peu plus de stabilité pour mes projets de vie futurs, donc je suis à la recherche d'un CDI dans une entreprise qui me permettra de continuer à apprendre et à me développer."
     }
-  ]
+  ],
+  "allRightsReserved": "Tous droits réservés",
+  "siteCreatedBy": "Site créé par",
+  "legalNotice": "Mentions légales",
+  "host": "Hébergeur",
+  "personalSite": "Site personnel de Corentin Nordmann",
+  "contactEmail": "Contact: coconrd@icloud.com"
 }
