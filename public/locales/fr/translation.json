@@ -10,6 +10,7 @@
   "emailError": "Erreur lors de l'envoi de l'email.",
   "darkModeEnabled": "Mode sombre activé",
   "lightModeEnabled": "Mode clair activé",
+  "langChangedSuccessfully": "Langue changée avec succès",
   "content-portrait": "Bonjour, moi c’est Corentin Nordmann, 26 ans. Développeur web depuis 2021, j’ai commencé avec HTML/CSS avant de plonger dans JavaScript, VueJS (mon terrain de jeu préféré) et React. <br /><br /> J’ai aussi exploré le back-end avec NodeJS, Express et MongoDB, réalisant plusieurs projets fullstack. <br /><br /> Passionné et toujours en quête de nouveaux défis, je suis aujourd’hui à la recherche d’une nouvelle aventure pro. Si mon profil vous parle, discutons-en ! <br /><br /> Prêt à explorer mon parcours ? Suivez le fil et découvrez mon histoire.",
   "timelineData": [
     {

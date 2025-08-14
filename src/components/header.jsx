@@ -23,6 +23,13 @@ export default function Header() {
 
   const changeLanguageHandler = (lang) => {
     i18n.changeLanguage(lang);
+    localStorage.setItem("language", lang);
+    // Mettre à jour le state pour déclencher la notification
+    setNotification({
+      display: true,
+      message: t("langChangedSuccessfully"),
+      type: "success",
+    });
   };
 
   useEffect(() => {
@@ -48,9 +55,7 @@ export default function Header() {
     setDarkMode(!darkMode);
     setNotification({
       display: true,
-      message: !darkMode
-        ? t("darkModeEnabled")
-        : t("lightModeEnabled"),
+      message: !darkMode ? t("darkModeEnabled") : t("lightModeEnabled"),
       type: "success",
     });
     const isDark = document.body.classList.contains("dark");
@@ -59,11 +64,16 @@ export default function Header() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    
+
     emailjs
-      .sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, form.current, {
-        publicKey: import.meta.env.VITE_PUBLIC_KEY,
-      })
+      .sendForm(
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
+        form.current,
+        {
+          publicKey: import.meta.env.VITE_PUBLIC_KEY,
+        }
+      )
       .then(
         () => {
           setNotification({

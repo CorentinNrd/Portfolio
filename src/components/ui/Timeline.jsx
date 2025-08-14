@@ -57,9 +57,9 @@ export default function Timeline() {
     // Cleanup
     return () => {
       items.forEach((item) => {
-        console.log("Cleaning up observer for item:", item);
-
-        // Les observers se nettoient automatiquement
+        const observer = new IntersectionObserver(() => {});
+        observer.disconnect();
+        observer.observe(item); // Déconnecte l'observer pour éviter les fuites de mémoire
       });
     };
   }, [timelineData]);
