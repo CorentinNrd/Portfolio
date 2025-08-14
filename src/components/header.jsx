@@ -164,8 +164,20 @@ export default function Header() {
         <hr className="hr" />
 
         <div className="socialIcons">
-          <FaGithub />
-          <FaLinkedin />
+          <a
+            href={import.meta.env.VITE_GITHUB_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href={import.meta.env.VITE_LINKEDIN_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin />
+          </a>
         </div>
       </ModalComponent>
       <NotificationsComponent
