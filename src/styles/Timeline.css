@@ -45,14 +45,31 @@
   transition: all 0.3s ease;
 }
 
-.timeline-content:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+/* Hover seulement sur desktop */
+@media (hover: hover) and (pointer: fine) {
+  .timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
 }
 
+/* Désactiver complètement le hover sur mobile */
 @media (max-width: 768px) {
+  .timeline-content {
+    transition: none; /* Désactive les transitions sur mobile */
+    -webkit-tap-highlight-color: transparent; /* Enlève le highlight sur tap */
+    -webkit-touch-callout: none; /* Désactive le callout sur touch */
+    -webkit-user-select: none; /* Désactive la sélection */
+    user-select: none;
+  }
+
   .timeline-content:hover {
-    transform: none;
+    transform: none !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .timeline-content:active {
+    transform: none !important;
   }
 }
 
@@ -122,7 +139,7 @@ body.dark .timeline-dot {
   .timeline-container {
     padding: 1rem 0; /* Réduit le padding sur mobile */
   }
-  
+
   .timeline-line {
     left: 2rem;
   }
