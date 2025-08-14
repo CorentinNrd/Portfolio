@@ -21,6 +21,9 @@ body.dark .customModal {
 }
 
 .react-responsive-modal-closeButton svg {
-  /* display: none; */
+  fill: #000;
+}
+
+body.dark .react-responsive-modal-closeButton svg {
   fill: #fff;
 }
