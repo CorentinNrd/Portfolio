@@ -4,6 +4,7 @@
   max-width: unset;
   max-height: 80vh;
   overflow-y: auto;
+  overflow-x: auto;
 }
 
 .react-responsive-modal-container {
