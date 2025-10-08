@@ -34,7 +34,7 @@ export default function Home() {
       <div className={styles.container}>
         <div onClick={() => setIsOpen(true)} className={styles.portraitblock}>
           <Cards className="portrait">
-            <h2 className={styles.h2}>Portrait !</h2>
+            <h2 className={styles.h2W}>Portrait !</h2>
           </Cards>
         </div>
         {device !== "Mobile" ? (

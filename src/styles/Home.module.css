@@ -21,6 +21,17 @@
   line-height: 1.5;
 }
 
+.h2W {
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 2vw;
+  text-align: left;
+  line-height: 1.5;
+  color: white;
+}
+
 .container {
   display: flex;
   justify-content: center;
