@@ -8,6 +8,7 @@ import { Trans } from "react-i18next";
 import Klineo from "../assets/klineo.png";
 import Parisattitude from "../assets/parisattitude.png";
 import SecretLancy from "../assets/secretlancy.png";
+import AbonnMe from "../assets/abonme.png";
 import Tipi from "../assets/tipi.png";
 import useDeviceDetection from "../hooks/useDeviceDetection";
 
@@ -28,6 +29,7 @@ export default function Home() {
     { src: Tipi, alt: "TIPI (outil interne)" },
     { src: Klineo, alt: "KLINEO", url: "https://www.klineo.fr/" },
     { src: SecretLancy, alt: "SECRET LANCY", url: "https://secret-lancy.netlify.app/auth" },
+    { src: AbonnMe, alt: "ABONNME", url: "https://abonnme.netlify.app/" },
   ];
 
   return (
